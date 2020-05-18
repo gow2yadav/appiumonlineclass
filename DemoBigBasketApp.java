@@ -1,6 +1,7 @@
 package com.tyss.appiumProject;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -34,9 +35,13 @@ public class DemoBigBasketApp {
 		driver.pressKeyCode(AndroidKeyCode.KEYCODE_ENTER);
 		Thread.sleep(2000);
 		String actual = driver.findElementById("com.bigbasket.mobileapp:id/txtProductCount").getText();
-		System.out.println(actual);
-		Assert.assertTrue(true, actual);
-		Assert.assertEquals(actual, "158 Items");
+		String[] b = actual.split(" ");
+		int a=Integer.parseInt(b[0]);
+		
+		
+		
+		Assert.assertTrue(a>140); 
+	
 		
 		
 
